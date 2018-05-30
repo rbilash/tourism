@@ -15,7 +15,7 @@
                         <p>Please add travellers to your trip.</p>
                     </div>
                     <div class="card-body" v-show="totalTravellers>0">
-                        <a href="#" @click="saveList" class="btn btn-primary btn-sm">Save List</a>
+                        <a href="#" @click="saveList" class="btn btn-success btn-sm">Save List</a>
                         <a href="#" @click="resetList" class="btn btn-danger btn-sm float-right">Reset List</a>
                     </div>
                 </div>
@@ -47,6 +47,9 @@
                     travellers: this.travellers,
                     lat: this.$store.state.lat,
                     lng: this.$store.state.lng,
+                }).then(response=>{
+                    this.$store.dispatch('uid', response.data.uid);
+                    this.$router.push({ name: 'success' });
                 });
             },
             removeItem: function(index) {

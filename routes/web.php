@@ -17,4 +17,5 @@ Route::get('/', function () {
 
 Route::prefix('api')->group(function() {
     Route::post('booking/save', 'FrontController@saveForm');
+    Route::get('booking/get/{uid}', 'FrontController@getBooking');
 });

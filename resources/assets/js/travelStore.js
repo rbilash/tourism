@@ -10,6 +10,7 @@ const travelStore = new Vuex.Store({
         travellers: [],
         lat: '',
         lng: '',
+        uid: '',
     },
     mutations: {
         FETCH(state, travellers) {
@@ -30,6 +31,9 @@ const travelStore = new Vuex.Store({
         LNG(state, lng) {
             state.lng = lng;
         },
+        UID(state, uid) {
+            state.uid = uid;
+        },
 
     },
     actions: {
@@ -47,6 +51,9 @@ const travelStore = new Vuex.Store({
         },
         lng({commit}, lng) {
             commit('LNG', lng);
+        },
+        uid({commit}, uid) {
+            commit('UID', uid);
         },
     }
 });

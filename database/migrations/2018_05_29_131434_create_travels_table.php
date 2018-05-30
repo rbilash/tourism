@@ -17,9 +17,10 @@ class CreateTravelsTable extends Migration
             $table->increments('id');
             $table->string('uid')->index();
             $table->string('lat')->nullable();
-            $table->string('long')->nullable();
+            $table->string('lng')->nullable();
             $table->string('city')->nullable();
             $table->string('country')->nullable();
+            $table->text('weather')->nullable();
             $table->timestamps();
 
 

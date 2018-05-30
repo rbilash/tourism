@@ -43,7 +43,7 @@
                 .then(coordinates => {
                     let {lat, lng} = coordinates;
                     this.lat = coordinates.lat;
-                    this.lng = coordinates.lat;
+                    this.lng = coordinates.lng;
                     // lets better store everything with vuex
                     this.$store.dispatch('lng', this.lng);
                     this.$store.dispatch('lat', this.lat);
